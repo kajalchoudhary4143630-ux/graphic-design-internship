@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vibehausart – 7-Day Social Media Campaign</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#2B1B3D;--coral:#FF6B57;--sun:#F2B544;--teal:#1F8A8A;--cream:#FFF4E6}
+*{box-sizing:border-box;margin:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--plum);padding:40px 5vw}
+h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,6vw,3rem)}
+.intro{max-width:60ch;margin:10px 0 28px}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}
+.post{flex:0 0 min(300px,80vw);aspect-ratio:1;scroll-snap-align:start;border-radius:20px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;border:0;text-align:left;font:inherit;cursor:pointer}
+.post b{font-family:'Fraunces',serif;font-size:1.7rem;line-height:1.1}
+.post span{font-size:.9rem}
+.blob{position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.25)}
+.m1 .blob{animation:float 3s ease-in-out infinite}.m2 .blob{animation:spin 6s linear infinite;border-radius:30%}
+.m3 b{animation:pulse 1.6s ease-in-out infinite;display:inline-block}
+@keyframes float{50%{transform:translateY(24px)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{transform:scale(1.08)}}
+.back{display:none}.post.flip .front{display:none}.post.flip .back{display:block;font-weight:500}
+.cap{margin-top:18px;max-width:60ch}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body>
+<h1>Meet the Vibehausart week</h1>
+<p class="intro">A 7-day campaign: 4 static posts and 3 animated posts. Swipe through the carousel and tap any post to flip it and see the goal.</p>
+<div class="track" id="t"></div>
+<p class="cap">Brand rules used: Fraunces for headlines, DM Sans for text, the five-color Vibehausart palette, a rounded square format (1080×1080 when exported).</p>
+<script>
+const P=[
+["Mon","Meet Vibehausart","Brand intro","Introduce the brand. CTA: follow us.","#2B1B3D","#FFF4E6","m1"],
+["Tue","Wear your vibe","New design drop","Show the hero product. CTA: shop now.","#FF6B57","#FFF4E6",""],
+["Wed","Behind the art","Process sketch to shirt","Build trust with the making process.","#F2B544","#2B1B3D","m2"],
+["Thu","Poll: which one?","Tap to vote in stories","Boost interaction with a poll.","#1F8A8A","#FFF4E6",""],
+["Fri","Fan favorite","Customer photo feature","Social proof. CTA: tag us.","#FFF4E6","#2B1B3D",""],
+["Sat","Weekend sale","20% off ends Sunday","Create urgency. CTA: use code VIBE20.","#FF6B57","#2B1B3D","m3"],
+["Sun","Thank you","You made our week","Gratitude plus a teaser for next week.","#2B1B3D","#F2B544",""]];
+const t=document.getElementById('t');
+P.forEach(p=>{const b=document.createElement('button');b.className='post '+p[6];b.style.cssText=`background:${p[4]};color:${p[5]}`;
+b.innerHTML=`<i class="blob"></i><span>${p[0]}${p[6]?' · animated':''}</span><div class="front"><b>${p[1]}</b><br><span>${p[2]}</span></div><div class="back"><span>Goal: ${p[3]}</span></div>`;
+b.onclick=()=>b.classList.toggle('flip');t.appendChild(b)});
+</script></body></html>

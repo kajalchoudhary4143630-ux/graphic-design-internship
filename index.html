@@ -1,39 +1,57 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vibehausart – 7-Day Social Media Campaign</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<title>Vibehausart – Brand Identity Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--plum:#2B1B3D;--coral:#FF6B57;--sun:#F2B544;--teal:#1F8A8A;--cream:#FFF4E6}
 *{box-sizing:border-box;margin:0}
-body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--plum);padding:40px 5vw}
-h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,6vw,3rem)}
-.intro{max-width:60ch;margin:10px 0 28px}
-.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}
-.post{flex:0 0 min(300px,80vw);aspect-ratio:1;scroll-snap-align:start;border-radius:20px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;border:0;text-align:left;font:inherit;cursor:pointer}
-.post b{font-family:'Fraunces',serif;font-size:1.7rem;line-height:1.1}
-.post span{font-size:.9rem}
-.blob{position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.25)}
-.m1 .blob{animation:float 3s ease-in-out infinite}.m2 .blob{animation:spin 6s linear infinite;border-radius:30%}
-.m3 b{animation:pulse 1.6s ease-in-out infinite;display:inline-block}
-@keyframes float{50%{transform:translateY(24px)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{transform:scale(1.08)}}
-.back{display:none}.post.flip .front{display:none}.post.flip .back{display:block;font-weight:500}
-.cap{margin-top:18px;max-width:60ch}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--plum);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif}
+section{padding:56px 6vw;max-width:1000px;margin:auto}
+h2{font-size:1.8rem;margin-bottom:20px}
+.hero{background:var(--plum);color:var(--cream);text-align:center;padding:72px 6vw;max-width:none}
+.hero h1{font-size:clamp(2.2rem,8vw,4rem);margin-top:12px}
+.hero p{opacity:.8}
+#logo{width:200px;height:200px;cursor:pointer}
+#logo .roof{stroke:var(--coral);stroke-width:6;fill:var(--coral);fill-opacity:0;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.4s ease forwards,fillin .6s 1.2s forwards}
+#logo .body{fill:var(--cream);transform-box:fill-box;transform-origin:center bottom;transform:scaleY(0);animation:rise .6s 1.4s forwards}
+#logo .sun{fill:var(--sun);transform-box:fill-box;transform-origin:center;transform:scale(0);animation:pop .5s 1.9s forwards}
+#logo .wave{stroke:var(--teal);stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:120;stroke-dashoffset:120;animation:draw .8s 2.2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes fillin{to{fill-opacity:1}}
+@keyframes rise{to{transform:scaleY(1)}}@keyframes pop{to{transform:scale(1)}}
+.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.sw div{border-radius:14px;padding:50px 12px 12px;color:#fff;font-size:.85rem}
+.type p{margin:6px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.bc{aspect-ratio:1.75;border-radius:10px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 6px 18px rgba(43,27,61,.18)}
+.bc.f{background:var(--plum);color:var(--cream);align-items:center;justify-content:center;text-align:center}
+.bc.b{background:#fff}.bc small{display:block;opacity:.75}
+.soc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.post{aspect-ratio:1;border-radius:18px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;line-height:1.15}
+@media(prefers-reduced-motion:reduce){#logo *{animation-duration:.01s!important;animation-delay:0s!important}}
 </style></head><body>
-<h1>Meet the Vibehausart week</h1>
-<p class="intro">A 7-day campaign: 4 static posts and 3 animated posts. Swipe through the carousel and tap any post to flip it and see the goal.</p>
-<div class="track" id="t"></div>
-<p class="cap">Brand rules used: Fraunces for headlines, DM Sans for text, the five-color Vibehausart palette, a rounded square format (1080×1080 when exported).</p>
-<script>
-const P=[
-["Mon","Meet Vibehausart","Brand intro","Introduce the brand. CTA: follow us.","#2B1B3D","#FFF4E6","m1"],
-["Tue","Wear your vibe","New design drop","Show the hero product. CTA: shop now.","#FF6B57","#FFF4E6",""],
-["Wed","Behind the art","Process sketch to shirt","Build trust with the making process.","#F2B544","#2B1B3D","m2"],
-["Thu","Poll: which one?","Tap to vote in stories","Boost interaction with a poll.","#1F8A8A","#FFF4E6",""],
-["Fri","Fan favorite","Customer photo feature","Social proof. CTA: tag us.","#FFF4E6","#2B1B3D",""],
-["Sat","Weekend sale","20% off ends Sunday","Create urgency. CTA: use code VIBE20.","#FF6B57","#2B1B3D","m3"],
-["Sun","Thank you","You made our week","Gratitude plus a teaser for next week.","#2B1B3D","#F2B544",""]];
-const t=document.getElementById('t');
-P.forEach(p=>{const b=document.createElement('button');b.className='post '+p[6];b.style.cssText=`background:${p[4]};color:${p[5]}`;
-b.innerHTML=`<i class="blob"></i><span>${p[0]}${p[6]?' · animated':''}</span><div class="front"><b>${p[1]}</b><br><span>${p[2]}</span></div><div class="back"><span>Goal: ${p[3]}</span></div>`;
-b.onclick=()=>b.classList.toggle('flip');t.appendChild(b)});
-</script></body></html>
+<section class="hero">
+<svg id="logo" viewBox="0 0 200 200" role="img" aria-label="Vibehausart animated logo" onclick="location.reload()">
+<polygon class="roof" points="20,95 100,25 180,95"/><rect class="body" x="45" y="95" width="110" height="75"/>
+<circle class="sun" cx="100" cy="125" r="17"/><path class="wave" d="M60 155 q10 -12 20 0 t20 0 t20 0 t20 0"/></svg>
+<h1>Vibehausart</h1><p>Art you can wear, a home for every vibe. (Click the logo to replay.)</p></section>
+
+<section><h2>Logo concept</h2><p>A house ("haus") built from a coral roof, a cream body, a sun for the creative spark and a teal wave for the vibe. The logo animates in four steps: roof draws, house rises, sun pops, wave flows. Exported as a video intro in After Effects, this same sequence works as a 3-second sting.</p></section>
+
+<section><h2>Color palette</h2><div class="sw">
+<div style="background:#2B1B3D">Midnight Plum<br>#2B1B3D</div><div style="background:#FF6B57">Coral Pop<br>#FF6B57</div>
+<div style="background:#F2B544;color:#2B1B3D">Sun Gold<br>#F2B544</div><div style="background:#1F8A8A">Wave Teal<br>#1F8A8A</div>
+<div style="background:#FFF4E6;color:#2B1B3D;border:1px solid #2B1B3D33">Cream<br>#FFF4E6</div></div></section>
+
+<section class="type"><h2>Typography</h2>
+<h3 style="font-size:2.4rem">Fraunces Black: Headlines</h3><p style="font-size:1.1rem">DM Sans Regular: body text and captions. Friendly, readable, clean.</p>
+<p><b>Scale:</b> 40 / 28 / 18 / 14 px. Headlines in sentence case.</p></section>
+
+<section><h2>Business cards</h2><div class="cards">
+<div class="bc f"><h3 style="font-size:1.6rem">Vibehausart</h3><small>Art you can wear</small></div>
+<div class="bc b"><div><h3>Your Name</h3><small>Founder &amp; Designer</small></div><div><small>hello@vibehausart.com</small><small>@vibehausart</small></div></div></div></section>
+
+<section><h2>Social media templates</h2><div class="soc">
+<div class="post" style="background:var(--coral);color:var(--cream)">New drop is live.</div>
+<div class="post" style="background:var(--sun)">Wear your vibe.</div>
+<div class="post" style="background:var(--teal);color:var(--cream)">Made by artists, for you.</div></div></section>
+</body></html>
